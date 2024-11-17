@@ -1,20 +1,23 @@
+import org.jetbrains.kotlin.gradle.targets.js.KotlinJsCompilerAttribute
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
-    namespace = "com.example.musicplayer"
+    namespace = "com.harshRajpurohit.musicPlayer"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.musicplayer"
-        minSdk = 24
+        applicationId = "com.harshRajpurohit.musicPlayer"
+        minSdk = 21
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 11
+        versionName = "2.0.1"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // For showing build version name
+        buildConfigField("String", "VERSION_NAME", "\"$versionName\"")
     }
 
     buildTypes {
@@ -33,16 +36,36 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        // For viewBinding
+        viewBinding = true
+
+        // For showing build version name
+        buildConfig = true
+    }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+
+    // Pull to Refresh
+    implementation(libs.legacy.support)
+
+    // Glide for image loading
+    implementation(libs.glide)
+
+    // For storing objects in shared preferences
+    implementation(libs.gson)
+
+    // Notification
+    implementation(libs.androidx.media)
+
+    // Vertical Seekbar
+    implementation(libs.verticalseekbar)
+
 }

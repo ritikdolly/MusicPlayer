@@ -19,10 +19,10 @@ class AboutActivity : AppCompatActivity() {
 
     private fun aboutText(): String {
         return """:
-            1. Sahdev (Registration No: 220301120403)
-            2. Ritik (Registration No: 220301120409)
-            3. Debasis (Registration No: 220301120409)
-
+            1. Sahdev (Reg No: 220301120403)
+            2. Ritik (Reg No: 220301120409)
+            3. Debasis (Reg No: 220301120409)
+            
             If you want to provide feedback, I will love to hear that.
         """.trimIndent()
     }

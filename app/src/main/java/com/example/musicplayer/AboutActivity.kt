@@ -18,11 +18,9 @@ class AboutActivity : AppCompatActivity() {
     }
 
     private fun aboutText(): String {
-        return """:
-            1. Sahdev (Reg No: 220301120403)
-            2. Ritik (Reg No: 220301120409)
-            3. Debasis (Reg No: 220301120409)
-            
+        return """
+      1.Ansumitra Prusty (220301120414)
+      2.Manzarul Islam (220301120350)
             If you want to provide feedback, I will love to hear that.
         """.trimIndent()
     }
